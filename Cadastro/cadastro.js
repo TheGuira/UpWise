@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (linkVoltar) {
     linkVoltar.addEventListener("click", function(event) {
       event.preventDefault();
-      window.location.href = "../homepage/homepage.html";
+      window.location.href = "../index.html";
     });
   }
 
@@ -159,5 +159,6 @@ document.addEventListener("DOMContentLoaded", function() {
       window.location.href = "../login/login.html";
     });
   });
+
 
 });
