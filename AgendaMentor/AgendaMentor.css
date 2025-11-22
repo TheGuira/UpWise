@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --Fundo: #f4fafe;
+  --Branco: #ffffff;
+  --Principal: #002051;
+  --Texto: #98a0ab;
+  --Scaixa: 0 6px 14px rgba(19, 24, 32, 0.06);
+  --Bcaixa: rgba(15,23,42,0.04);
+  --green: #4CAF50;
+  --purple: #BA68C8;
+  --yellow: #FFD54F;
+  --pink: #e75480;
+  --painel-gap: 24px;
+  --Sidebarw: 220px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--Fundo);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  min-height:100vh;
+}
+
+/* BARRA LATERAL */
+.barra-lateral{
+  width:var(--Sidebarw);
+  background:#FAFAFA;
+  height:100vh;
+  position:fixed;
+  left:0;
+  top:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid var(--Bcaixa);
+  padding:18px 16px;
+  z-index:20;
+}
+.barra-lateral .marca{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.barra-lateral .marca img{
+  width:200px;
+}
+
+/* nav */
+.barra-lateral nav{margin-top:18px}
+.barra-lateral nav ul{list-style:none;padding:0;margin:0}
+.barra-lateral nav li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 8px;
+  border-radius:8px;
+  color:#222;
+  font-size:15px;
+  cursor:pointer;
+}
+.barra-lateral nav li:hover{
+  background:#f5fbff;
+  color:var(--Principal);
+}
+
+/* info usuario */
+.usuario{
+  border-top:1px solid var(--Bcaixa);
+  padding-top:12px;
+  font-size:13px;
+  color:var(--Texto);
+}
+.info-usuario{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#e6e9ee;
+}
+.nome-usuario{
+  font-weight:600;
+  color:#0f172a;
+}
+.email-usuario{
+  font-size:12px;
+  color:var(--Texto);
+}
+.sair{
+  margin-top:12px;
+}
+.sair a{
+  color:var(--Principal);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* AREA PRINCIPAL */
+.principal{
+  margin-left:var(--Sidebarw);
+  padding:28px 36px;
+  flex:1;
+  min-height:100vh;
+}
+.cabecalho { /* Adicionado flexbox para alinhar o botão */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.cabecalho h1{
+  margin:0;
+  font-family:"Days One", sans-serif;
+  font-size:28px;
+  color:#0b1220;
+}
+.cabecalho p{
+  margin:6px 0 0; /* Ajustada margem */
+  color:var(--Texto);
+  font-size:14px;
+}
+
+/* CAIXAS */
+.caixa{
+  background:var(--Branco);
+  border-radius:10px;
+  padding:20px;
+  min-height: 200px; /* Reduzido o min-height padrão */
+  box-shadow:var(--Scaixa);
+  border:1px solid var(--Bcaixa);
+}
+.caixa h3{
+  margin:0 0 12px;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--Principal);
+}
+.caixa i{
+  color:var(--Principal);
+}
+.caixa .vazio{
+  color:#9aa3ad;
+  font-size:14px;
+  margin-top:12px;
+}
+
+/* BOTOES */
+.btn-header-acao { /* Estilo base para o botão do header */
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+/* --- ADIÇÕES PARA A PÁGINA DE AGENDA --- */
+
+/* Destaque do item "Minha Agenda" no menu */
+.barra-lateral nav li.ativo {
+  background: #f0f4ff;
+  color: var(--Principal);
+  font-weight: 600;
+}
+
+/* Layout da Agenda (ATUALIZADO) */
+.agenda-container {
+  display: grid;
+  grid-template-columns: 340px 1fr; /* Coluna esquerda fixa, direita flexível */
+  gap: 24px;
+  align-items: flex-start;
+}
+.agenda-coluna-esquerda, .agenda-coluna-direita {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Espaçamento entre as caixas */
+}
+
+
+/* Estilos do Calendário */
+.calendario-caixa {
+  padding: 12px;
+}
+.calendario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+}
+.calendario-header h3 {
+  margin: 0;
+  font-size: 17px;
+  text-transform: capitalize;
+  color: var(--Principal);
+}
+.cal-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--Texto);
+  font-size: 16px;
+  padding: 10px;
+}
+.cal-nav:hover {
+  color: var(--Principal);
+}
+.calendario-dias-semana {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--Texto);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--Bcaixa);
+}
+.calendario-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  padding: 10px 4px;
+}
+.calendario-grid .dia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.calendario-grid .dia:not(.outro-mes):hover {
+  background-color: #f5f9ff;
+  border-color: #dbeaff;
+}
+.calendario-grid .dia.hoje {
+  background-color: var(--Principal);
+  color: var(--Branco);
+  border-radius: 8px; /* Quadrado */
+}
+.calendario-grid .dia.selecionado {
+  background-color: #0f172a; /* Cor preta/azul escura da imagem */
+  color: var(--Branco);
+  border-color: #0f172a;
+  border-radius: 8px; /* Quadrado */
+}
+.calendario-grid .dia.outro-mes {
+  color: #ccc;
+  cursor: default; /* Alterado de not-allowed */
+}
+
+/* Sessões do Dia (ATUALIZADO) */
+.sessoes-do-dia {
+  min-height: 450px; /* Altura para preencher o espaço */
+  display: flex;
+  flex-direction: column;
+}
+.sessoes-do-dia h3 {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--Bcaixa);
+}
+/* Novo estado vazio */
+.sessoes-vazio {
+  flex-grow: 1; /* Ocupa o espaço restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--Texto);
+  padding: 20px;
+}
+.sessoes-vazio .icone-sessoes {
+  font-size: 40px;
+  color: #cbd5e1; /* Cinza claro */
+  margin-bottom: 16px;
+}
+.sessoes-vazio p {
+  margin: 0;
+  font-size: 15px;
+  color: #555;
+}
+.sessoes-vazio .subtexto-vazio {
+  font-size: 13px;
+  color: var(--Texto);
+  margin-top: 4px;
+}
+
+
+/* Coluna Lateral (Disponibilidade) */
+.disponibilidade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.disponibilidade-header h3 {
+  margin: 0;
+}
+.btn-acao-roxo {
+  background-color: var(--purple);
+  color: var(--Branco);
+  border: none;
+}
+.btn-acao-roxo:hover {
+  background-color: #a450b6;
+}
+
+.dispo-item {
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--Bcaixa);
+  padding-bottom: 12px;
+}
+.dispo-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+.dispo-item h4 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+}
+.dispo-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dispo-tags .tag {
+  background-color: #eef2ff;
+  color: #4338ca;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.dispo-tags .vazio, .sessoes-do-dia .vazio { /* .sessoes-do-dia .vazio é antigo */
+  font-size: 14px;
+  color: var(--Texto);
+}
+.dispo-valor {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--Principal);
+}
+/* Estilo para "A combinar" (ATUALIZADO) */
+.dispo-valor-combinar {
+  font-size: 16px;
+  font-weight: 600;
+  color: #4338ca; /* Azul/Indigo */
+  display: none; /* JS controla a exibição */
+}
+
+
+/* --- ESTILOS DO MODAL --- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.modal-overlay.visivel {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-conteudo {
+  background-color: var(--Branco);
+  padding: 28px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  transition: transform 0.3s;
+}
+.modal-overlay.visivel .modal-conteudo {
+  transform: scale(1);
+}
+
+.modal-conteudo h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: var(--Principal);
+}
+
+.form-secao {
+  margin-bottom: 20px;
+}
+.form-secao h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  color: #333;
+}
+
+.selecao-grupo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.btn-toggle {
+  background-color: #f4f4f5;
+  border: 1px solid #e4e4e7;
+  color: #3f3f46;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+
+}
+.btn-toggle:hover {
+  background-color: #e4e4e7;
+}
+.btn-toggle.ativo {
+  background-color: var(--Principal);
+  color: var(--Branco);
+  border-color: var(--Principal);
+}
+
+.input-valor {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box; 
+}
+.input-valor:focus {
+  outline: none;
+  border-color: var(--Principal);
+  box-shadow: 0 0 0 2px #e0e9ff;
+}
+
+.modal-botoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 28px;
+  border-top: 1px solid var(--Bcaixa);
+  padding-top: 20px;
+}
+.btn-cancelar, .btn-salvar {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-cancelar {
+  background-color: #f1f1f1;
+  color: #555;
+  border: 1px solid #ddd;
+}
+.btn-cancelar:hover {
+  background-color: #e9e9e9;
+}
+.btn-salvar {
+  background-color: #10b981; /* Verde */
+  color: var(--Branco);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-salvar:hover {
+  background-color: #0f9f6e;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .agenda-container {
+    grid-template-columns: 1fr; /* Empilha as colunas */
+  }
+}

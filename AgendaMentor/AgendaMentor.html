@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Minha Agenda — UpWise</title>
+  <link rel="stylesheet" href="AgendaMentor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <aside class="barra-lateral">
+    <div>
+      <div class="marca">
+        <div class="logo">
+          <img src="logomentor.png" alt="logo">
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li data-link="inicio"><i class="fas fa-home"></i> Início</li>
+            <li data-link="minha-agenda"><i class="fas fa-calendar-alt"></i> Minha Agenda</li>
+            <li data-link="minhas-sessoes"><i class="fas fa-chalkboard-teacher"></i> Sessões</li>
+            <li data-link="chat"><i class="fas fa-comment-dots"></i> Chat</li>
+            <li data-link="Avaliação"><i class="fas fa-star"></i> Avaliações</li>
+            <li data-link="perfil"><i class="fas fa-user"></i> Perfil</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="usuario">
+      <div class="info-usuario">
+        <div class="avatar"></div>
+            <div>
+                <div class="nome-usuario">[Nome]</div>
+                <div class="email-usuario">email@gmail.com</div>
+            </div>
+          </div>
+          <div class="sair">
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="principal">
+    <header class="cabecalho">
+      <div>
+        <h1>Minha Agenda</h1>
+        <p>Gerencie sua disponibilidade e sessões agendadas</p>
+      </div>
+      <button id="btn-editar-disponibilidade" class="btn-header-acao btn-acao-roxo">
+        <i class="fas fa-pencil-alt"></i> Editar Disponibilidade
+      </button>
+    </header>
+
+    <section class="agenda-container">
+      
+      <div class="agenda-coluna-esquerda">
+        <div class="caixa calendario-caixa">
+          <div class="calendario-header">
+            <button id="prev-month" class="cal-nav"><i class="fas fa-chevron-left"></i></button>
+            <h3 id="month-year"></h3>
+            <button id="next-month" class="cal-nav"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          <div class="calendario-dias-semana">
+            <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+          </div>
+          <div class="calendario-grid" id="calendar-days">
+            </div>
+        </div>
+
+        <div class="caixa">
+          <h3 class="disponibilidade-header">Disponibilidade Atual</h3>
+
+          <div class="dispo-item">
+            <h4>Dias Disponíveis</h4>
+            <div class="dispo-tags" id="dias-atuais">
+              </div>
+          </div>
+          
+          <div class="dispo-item">
+            <h4>Horários Preferenciais</h4>
+            <div class="dispo-tags" id="horarios-atuais">
+              </div>
+          </div>
+
+          <div class="dispo-item">
+            <h4>Valor por Hora</h4>
+            <strong class="dispo-valor" id="valor-atual"></strong>
+            <span class="dispo-valor-combinar" id="valor-combinar">A combinar</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="agenda-coluna-direita">
+        <div class="caixa sessoes-do-dia">
+          <h3 id="data-selecionada-cabecalho"></h3>
+          
+          <div class="sessoes-vazio" id="lista-sessoes">
+            <i class="fas fa-calendar-times icone-sessoes"></i>
+            <p>Nenhuma sessão agendada para esta data</p>
+            <p class="subtexto-vazio">Dia não disponível para mentoria</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <div class="modal-overlay" id="modal-disponibilidade">
+    <div class="modal-conteudo">
+      <h2>Editar Disponibilidade</h2>
+
+      <form id="form-disponibilidade">
+        <div class="form-secao">
+          <h4>Dias Disponíveis</h4>
+          <div class="selecao-grupo selecao-dias">
+            <button type="button" class="btn-toggle" data-dia="Segunda-feira">Segunda-feira</button>
+            <button type="button" class="btn-toggle" data-dia="Terça-feira">Terça-feira</button>
+            <button type="button" class="btn-toggle" data-dia="Quarta-feira">Quarta-feira</button>
+            <button type="button" class="btn-toggle" data-dia="Quinta-feira">Quinta-feira</button>
+            <button type="button" class="btn-toggle" data-dia="Sexta-feira">Sexta-feira</button>
+            <button type="button" class="btn-toggle" data-dia="Sábado">Sábado</button>
+            <button type="button" class="btn-toggle" data-dia="Domingo">Domingo</button>
+          </div>
+        </div>
+
+        <div class="form-secao">
+          <h4>Horários Preferenciais</h4>
+          <div class="selecao-grupo selecao-horarios">
+            <button type="button" class="btn-toggle" data-horario="08:00-09:00">08:00-09:00</button>
+            <button type="button" class="btn-toggle" data-horario="09:00-10:00">09:00-10:00</button>
+            <button type="button" class="btn-toggle" data-horario="10:00-11:00">10:00-11:00</button>
+            <button type="button" class="btn-toggle" data-horario="11:00-12:00">11:00-12:00</button>
+            <button type="button" class="btn-toggle" data-horario="13:00-14:00">13:00-14:00</button>
+            <button type="button" class="btn-toggle" data-horario="14:00-15:00">14:00-15:00</button>
+            <button type="button" class="btn-toggle" data-horario="15:00-16:00">15:00-16:00</button>
+            <button type="button" class="btn-toggle" data-horario="16:00-17:00">16:00-17:00</button>
+            <button type="button" class="btn-toggle" data-horario="17:00-18:00">17:00-18:00</button>
+            <button type="button" class="btn-toggle" data-horario="18:00-19:00">18:00-19:00</button>
+            <button type="button" class="btn-toggle" data-horario="19:00-20:00">19:00-20:00</button>
+            <button type="button" class="btn-toggle" data-horario="20:00-21:00">20:00-21:00</button>
+          </div>
+        </div>
+
+        <div class="form-secao">
+          <h4>Valor por Hora (R$)</h4>
+          <input type="number" class="input-valor" id="input-valor-hora" placeholder="100">
+        </div>
+      </form>
+
+      <div class="modal-botoes">
+        <button class="btn-cancelar" id="btn-modal-cancelar">Cancelar</button>
+        <button class="btn-salvar" id="btn-modal-salvar"><i class="fas fa-save"></i> Salvar Alterações</button>
+      </div>
+    </div>
+  </div>
+  <script src="AgendaMentor.js"></script>
+</body>
+</html>

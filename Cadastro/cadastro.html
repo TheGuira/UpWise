@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro | UpWise</title>
+  <link rel="stylesheet" href="cadastro.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+
+    <a href="#" class="back-link">← Voltar ao início</a>
+
+    <div class="logo">
+      <img src="logo.png" alt="Logo UpWise">
+      <p>Crie sua conta e comece a melhorar seu conhecimento</p>
+    </div>
+
+    <div class="form-box">
+
+      <div class="progress">
+        <div class="progress-bar"></div>
+      </div>
+
+      <form id="cadastroForm">
+
+        <div class="form-step active">
+          <h2>Cadastro - Etapa 1 de 3</h2>
+          <h3>Informações Básicas</h3>
+          <p>Vamos começar com o essencial</p>
+
+          <label>Nome Completo</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+          <label>Email</label>
+          <input type="email" id="email" placeholder="Digite seu email" required>
+
+          <label>Senha</label>
+          <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+          <label>Tipo de Conta</label>
+          <div class="account-type">
+            <button type="button" class="tipo-conta" data-value="mentorado">Mentorado<br><span>Quero aprender e crescer</span></button>
+            <button type="button" class="tipo-conta" data-value="mentor">Mentor<br><span>Quero ensinar e compartilhar</span></button>
+          </div>
+
+          <div class="form-footer right">
+            <button type="button" class="next-btn">Próximo</button>
+          </div>
+
+          <p class="login-text">Já tem uma conta? <a href="#">Fazer login</a></p>
+        </div>
+
+        <div class="form-step">
+          <h2>Cadastro - Etapa 2 de 3</h2>
+          <h3>Sobre Você</h3>
+          <p>Conte um pouco sobre sua experiência</p>
+
+          <label>Biografia</label>
+          <textarea id="biografia" placeholder="Fale um pouco sobre você"></textarea>
+
+          <label>Nível de Experiência</label>
+          <select id="nivel_experiencia" required>
+            <option value="" disabled selected>Selecione seu nível</option>
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+            <option value="especialista">Especialista</option>
+          </select>
+
+          <label>LinkedIn (opcional)</label>
+          <input type="url" id="linkedin" placeholder="Cole o link do seu perfil LinkedIn">
+
+          <div class="form-footer">
+            <button type="button" class="back-btn">Voltar</button>
+            <button type="button" class="next-btn">Próximo</button>
+          </div>
+
+          <p class="login-text">Já tem uma conta? <a href="#">Fazer login</a></p>
+        </div>
+        <div class="form-step">
+          <h2>Cadastro - Etapa 3 de 3</h2>
+          <h3>Áreas de Interesse</h3>
+          <p>Quais áreas você gostaria de aprender?</p>
+
+          <label>Áreas de Interesse</label>
+          <div class="interest-grid">
+            <button type="button" class="area">Programação</button>
+            <button type="button" class="area">Design</button>
+            <button type="button" class="area">Marketing</button>
+            <button type="button" class="area">Vendas</button>
+            <button type="button" class="area">Product Management</button>
+            <button type="button" class="area">Dados e Analytics</button>
+            <button type="button" class="area">Recursos Humanos</button>
+            <button type="button" class="area">Finanças</button>
+            <button type="button" class="area">Empreendedorismo</button>
+          </div>
+
+          <label>Outras áreas de interesse</label>
+          <input type="text" id="outras" placeholder="Digite outras áreas de interesse">
+
+          <div class="form-footer">
+            <button type="button" class="back-btn">Voltar</button>
+            <button type="submit" class="next-btn">Concluir</button>
+          </div>
+
+          <p class="login-text">Já tem uma conta? <a href="#">Fazer login</a></p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="cadastro.js"></script>
+</body>
+</html>

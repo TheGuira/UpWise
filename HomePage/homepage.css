@@ -1,0 +1,284 @@
+/* Variáveis de Cores*/
+:root {
+    --CorPrimaria: #002051; 
+    --Texto1: #333;
+    --Texto2: #666;
+    --Fundo: #F4FAFE; 
+    --Pbranca: #fff;
+    --borda: #E0E0E0;
+    --Sombra: 0 4px 12px rgba(0, 0, 0, 0.05); 
+}
+
+/* Reset Básico e Fontes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--Texto1);
+    line-height: 1.6;
+    background-color: var(--Pbranca);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+h1 strong {
+    color: var(--CorPrimaria);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--CorPrimaria);
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: var(--Texto2);
+    margin-bottom: 40px;
+}
+
+/* Botões*/
+.Pbotao, .Sbotao, .Tbotao {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    border: 2px solid transparent;
+}
+
+.Pbotao {
+    background-color: var(--CorPrimaria);
+    color: var(--Pbranca);
+}
+
+.Pbotao:hover {
+    background-color: #2a4c8a; 
+}
+
+.nav-links .Pbotao{
+    margin-left: 30px;
+    padding: 8px 18px; 
+    color: var(--Pbranca); 
+}
+
+
+.Sbotao {
+    background-color: transparent;
+    border-color: var(--CorPrimaria);
+    color: var(--CorPrimaria);
+    padding: 10px 25px;
+}
+
+.Sbotao:hover {
+    background-color: var(--CorPrimaria);
+    color: var(--Pbranca);
+}
+
+.Tbotao {
+    background-color: var(--Pbranca);
+    color: var(--CorPrimaria);
+    font-size: 1.1rem;
+}
+
+.Tbotao:hover {
+    background-color: #e6e6e6;
+}
+
+/* 1. Navbar */
+.navbar {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--borda);
+    background-color: var(--white);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Tamanho do logo */
+.logo img {
+    height: 35px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--Texto2t);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover:not(.Pbotao) {
+    color: var(--CorPrimaria);
+}
+
+
+/* 2. Seção */
+.Psecao {
+    background-color: var(--Fundo);
+    text-align: center;
+    padding: 80px 0;
+}
+
+.PSdescricao {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    color: var(--Texto2);
+    font-size: 1.1rem;
+}
+
+.PSacao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+
+
+/* 3. Seção Como Funciona */
+.ComoFunciona {
+    background-color: var(--Pbranca); 
+    padding: 80px 0;
+    text-align: center;
+}
+
+
+.CFgrid {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/*"Como Funciona"*/
+.CFcard {
+    flex-basis: 25%;
+    padding: 30px 20px; 
+    text-align: center;
+    background-color: var(--Pbranca); 
+    border-radius: 10px;
+    box-shadow: var(--Sombra); 
+    border: 1px solid var(--borda);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.CFcard:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.CFcard h3 {
+    color: var(--CorPrimaria);
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.CFcard p {
+    color: var(--Texto2);
+}
+
+
+/* 4. Seção Depoimentos*/
+.Depoimentos {
+    background-color: var(--Fundo);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.Dgrid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.Dcard {
+    flex-basis: calc(33.333% - 20px);
+    background-color: var(--Pbranca);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+
+
+.Dcard .story {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--Texto1);
+}
+
+.InfoPersona {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    border-top: 1px solid var(--borda);
+    padding-top: 15px;
+}
+
+.Foto {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #cccccc; 
+}
+
+.Nome {
+    font-weight: 600;
+    color: var(--Texto1);
+}
+
+.Sfinal {
+    background-color: var(--CorPrimaria);
+    color: var(--Pbranca);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.Sfinal h2 {
+    color: var(--Pbranca);
+    margin-bottom: 10px;
+}
+
+.Sfinal p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* 6. Rodapé */
+footer {
+    background-color: #090E16; 
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Tamanho do logo no rodapé */
+.footer-logo img {
+    height: 50px; 
+}

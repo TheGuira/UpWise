@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Meu Perfil — UpWise</title>
+  <link rel="stylesheet" href="perfilmentorado.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <aside class="barra-lateral">
+    <div>
+      <div class="marca">
+        <div class="logo">
+          <img src="logomentorado.png" alt="logo">
+        </div>
+      </div>
+
+         <nav>
+              <ul>
+                  <li data-link="inicio"><i class="fas fa-home"></i> Início</li>
+                  <li data-link="buscar-mentores"><i class="fas fa-search"></i> Buscar Mentores</li>
+                  <li data-link="minhas-sessoes" ><i class="fas fa-calendar-alt"></i> Minhas Sessões</li>
+                  <li data-link="chat"><i class="fas fa-comments"></i> Chat</li>
+                  <li data-link="favoritos"><i class="fas fa-star"></i> Favoritos</li>
+                  <li data-link="perfil"><i class="fas fa-user-circle"></i> Perfil</li>
+              </ul>
+          </nav>
+    </div>
+
+    <div class="usuario">
+      <div class="info-usuario">
+        <div class="avatar"></div>
+        <div>
+          <div class="nome-usuario">[Nome]</div>
+          <div class="email-usuario">email@gmail.com</div>
+        </div>
+      </div>
+      <div class="sair">
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="principal">
+    
+    <header class="cabecalho">
+      <h1>Meu Perfil</h1>
+      <p>Gerencie suas informações e configurações</p>
+    </header>
+
+    <section class="caixa caixa-perfil-superior">
+     
+      <div class="perfil-info-foto-container"> 
+        <div class="perfil-avatar">
+            <div class="foto-placeholder" id="foto-placeholder">
+            foto
+            </div>
+            <input type="file" id="input-foto" accept="image/*" style="display: none;"> 
+            <div class="icone-editar-foto" id="icone-editar-foto">
+            <i class="fas fa-camera"></i>
+        </div>
+        </div>
+        <div class="perfil-info-principal">
+          <h2>[Nome]</h2>
+          <p>email@gmail.com</p>
+          <span class="tipo-perfil">[tipo do perfil]</span>
+        </div>
+      </div>
+      <div class="perfil-estatisticas">
+        <div class="stat-item">
+          <i class="fas fa-book-open"></i>
+          <div class="texto">
+            <span class="valor">0</span>
+            <span class="rotulo">Sessões Realizadas</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-star"></i>
+          <div class="texto">
+            <span class="valor">N/A</span>
+            <span class="rotulo">Avaliação Média</span>
+          </div>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-chart-line"></i>
+          <div class="texto">
+            <span class="valor" data-tipo="nivel">[Nivel de aprendizado]</span>
+            <span class="rotulo">Nível de Aprendizado</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="caixa">
+      <form>
+        <nav class="perfil-tabs">
+          <a href="#" class="active" data-tab="pessoal">Informações Pessoais</a>
+          <a href="#" data-tab="profissional">Profissional</a>
+        </nav>
+
+        <div class="perfil-form-conteudo">
+          
+          <div class="aba-conteudo" id="pessoal" style="display: block;">
+            <h3><i class="fas fa-user-circle"></i> Informações Pessoais</h3>
+            
+            <div class="form-grupo">
+              <label for="nome">Nome Completo</label>
+              <input type="text" id="nome" placeholder="">
+            </div>
+            
+            <div class="form-grupo">
+              <label for="bio">Biografia</label>
+              <textarea id="bio" rows="5"></textarea>
+            </div>
+
+            <div class="form-grupo">
+              <label for="linkedin">LinkedIn</label>
+              <input type="text" id="linkedin" value="https://linkedin.com/in/seuperfil">
+            </div>
+          </div>
+          
+          <div class="aba-conteudo" id="profissional" style="display: none;">
+            <h3><i class="fas fa-briefcase"></i> Informações Profissionais</h3>
+            
+            <div class="form-grupo">
+              <label for="nivel">Nível de Experiência</label>
+              <select id="nivel" name="nivel" class="input-form-estilo">
+                <option value="iniciante">Iniciante</option>
+                <option value="intermediario" selected>Intermediário</option>
+                <option value="avancado">Avançado</option>
+                <option value="especialista">Especialista</option>
+              </select>
+            </div>
+
+            <div class="form-grupo">
+              <label>Áreas de Especialidade</label>
+              <div class="grade-especialidades">
+                <button type="button" class="btn-especialidade active">Programação</button>
+                <button type="button" class="btn-especialidade">Design</button>
+                <button type="button" class="btn-especialidade">Marketing</button>
+                <button type="button" class="btn-especialidade">Vendas</button>
+                <button type="button" class="btn-especialidade">Product Management</button>
+                <button type="button" class="btn-especialidade">Dados e Analytics</button>
+                <button type="button" class="btn-especialidade">Recursos Humanos</button>
+                <button type="button" class="btn-especialidade">Finanças</button>
+                <button type="button" class="btn-especialidade">Empreendedorismo</button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="area-btn-salvar">
+          <button type="submit" class="btn-salvar">Salvar Alterações</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+<script src="perfilmentorado.js"></script>
+  </body>
+</html>

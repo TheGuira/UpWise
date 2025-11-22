@@ -1,0 +1,560 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --Fundo: #f4fafe;
+  --Branco: #ffffff;
+  --Principal: #002051;
+  --Texto: #98a0ab; 
+  --Scaixa: 0 6px 14px rgba(19, 24, 32, 0.06);
+  --Bcaixa: rgba(15,23,42,0.04);
+  --green: #4CAF50;
+  --purple: #BA68C8;
+  --yellow: #FFD54F;
+  --pink: #e75480;
+  --lacuna-painel: 24px; 
+  --Sidebarw: 220px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--Fundo);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  min-height:100vh;
+}
+
+/* BARRA LATERAL */
+.barra-lateral{
+  width:var(--Sidebarw);
+  background:#FAFAFA;
+  height:100vh;
+  position:fixed;
+  left:0;
+  top:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid var(--Bcaixa);
+  padding:18px 16px;
+  z-index:20;
+}
+.barra-lateral .marca{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.barra-lateral .marca img{
+  width:200px;
+}
+
+/* nav */
+.barra-lateral nav{margin-top:18px}
+.barra-lateral nav ul{list-style:none;padding:0;margin:0}
+.barra-lateral nav li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 8px;
+  border-radius:8px;
+  color:#222;
+  font-size:15px;
+  cursor:pointer;
+}
+.barra-lateral nav li:hover{
+  background:#f5fbff;
+  color:var(--Principal);
+}
+
+/* info usuario */
+.usuario{
+  border-top:1px solid var(--Bcaixa);
+  padding-top:12px;
+  font-size:13px;
+  color:var(--Texto); 
+}
+.info-usuario{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#e6e9ee;
+  background-size: cover;
+  background-position: center;
+}
+.nome-usuario{
+  font-weight:600;
+  color: #0f172a; 
+}
+.email-usuario{
+  font-size:12px;
+  color:var(--Texto); 
+}
+.sair{
+  margin-top:12px;
+}
+.sair a{
+  color:var(--Principal);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* AREA PRINCIPAL */
+.principal{
+  margin-left:var(--Sidebarw);
+  padding:28px 36px;
+  flex:1;
+  min-height:100vh;
+}
+.cabecalho h1{
+  margin:0;
+  font-family:"Days One", sans-serif;
+  font-size:28px;
+  color:#0b1220;
+}
+.cabecalho p{
+  margin:6px 0 20px;
+  color:var(--Texto);
+  font-size:14px;
+}
+
+/* METRICAS (Estilo genérico, não usado diretamente na tela de perfil) */
+.metricas{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:20px;
+}
+.metrica{
+  background:var(--Branco);
+  border-radius:10px;
+  padding:16px;
+  box-shadow:var(--Scaixa);
+  border:1px solid var(--Bcaixa);
+  position:relative;
+}
+.metrica .rotulo{
+  font-size:13px;
+  color:var(--Texto); 
+  margin-bottom:6px;
+}
+.metrica .valor{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.metrica .emblema{
+  position:absolute;
+  right:12px;
+  top:12px;
+  font-size:12px;
+  padding:6px 8px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.emblema-roxo{
+  background:#f7f0ff;
+  color:var(--purple);
+}
+.emblema-verde{
+  background:#e6f7ee;
+  color:var(--green);
+}
+.emblema-amarelo{
+  background:#fff8e6;
+  color:#f0a500;
+}
+.emblema-rosa{
+  background:#fff5f9;
+  color:var(--pink);
+}
+
+/* GRADE PRINCIPAL  */
+.grade-principal{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-bottom:22px;
+}
+.caixa{
+  background:var(--Branco);
+  border-radius:10px;
+  padding:20px;
+  min-height:auto;
+  box-shadow:var(--Scaixa);
+  border:1px solid var(--Bcaixa);
+  margin-bottom: 24px;
+}
+.caixa h3{
+  margin:0 0 12px;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--Principal);
+}
+.caixa i{
+  color:var(--Principal);
+}
+.caixa .vazio{
+  color:#9aa3ad;
+  font-size:14px;
+  margin-top:12px;
+}
+.caixa-larga{
+  grid-column:1 / -1;
+}
+.area-btn{
+  margin-top:12px;
+}
+.area-btn.direita{
+  text-align:right;
+}
+
+/* BOTOES */
+.linha-acoes{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+.btn-acao{
+  flex:1;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:var(--Branco);
+  font-weight:500;
+  cursor:pointer;
+  transition:background 0.2s, transform 0.1s;
+}
+.btn-acao:hover{
+  background:#f0f4ff;
+  transform:translateY(-1px);
+}
+
+/* Estilo do item de menu ativo */
+.barra-lateral nav li.active,
+.barra-lateral nav li.active:hover {
+  background: #e3f2fd;
+  color: var(--Principal);
+  font-weight: 600;
+}
+
+
+
+/* === NOVOS ESTILOS - PÁGINA DE PERFIL ==== */
+.caixa-perfil-superior {
+  padding-bottom: 0;
+  display: flex; 
+  flex-direction: column; 
+}
+
+.perfil-info-foto-container {
+  display: flex;
+  align-items: flex-start; 
+  gap: 24px;
+  border-bottom: 1px solid var(--Bcaixa);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.perfil-avatar {
+  position: relative;
+  width: 100px; 
+  height: 100px;
+}
+
+
+.foto-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #e6e9ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--Texto);
+  font-weight: 500;
+  overflow: hidden; 
+  position: relative;
+  z-index: 1; 
+  border: 2px solid var(--Branco); 
+  box-shadow: 0 0 0 2px var(--Bcaixa); 
+}
+
+
+.icone-editar-foto {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-color: var(--Branco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--Principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  border: 2px solid var(--Principal); 
+  z-index: 2; 
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.icone-editar-foto:hover {
+  background-color: #f0f4ff; 
+}
+
+
+.perfil-info-principal {
+  flex: 1;
+  padding-top: 8px;
+}
+
+.perfil-info-principal h2 {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.perfil-info-principal p {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--Texto);
+}
+
+.tipo-perfil {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  background: #f4f6f8;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--Bcaixa);
+}
+
+.perfil-estatisticas {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-item i {
+  font-size: 22px;
+  color: var(--Principal);
+  opacity: 0.7;
+}
+
+.stat-item .texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-item .valor {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.stat-item .rotulo {
+  font-size: 13px;
+  color: var(--Texto);
+}
+
+
+/* Abas e Formulário */
+.perfil-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--Bcaixa);
+  margin-bottom: 24px;
+}
+
+.perfil-tabs a {
+  padding: 10px 16px;
+  margin: 0 4px;
+  margin-bottom: -2px; 
+  text-decoration: none;
+  color: var(--Texto);
+  font-weight: 500;
+  font-size: 15px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.perfil-tabs a:first-child {
+  margin-left: 0;
+}
+
+.perfil-tabs a:hover {
+  color: #333;
+}
+
+.perfil-tabs a.active {
+  color: var(--Principal);
+  border-bottom-color: var(--Principal);
+  font-weight: 600;
+}
+
+.perfil-form-conteudo h3 {
+  margin: 0 0 24px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  font-weight: 600;
+}
+.perfil-form-conteudo h3 i {
+  color: var(--Principal);
+  font-size: 20px;
+}
+
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-grupo input[type="text"],
+.form-grupo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #cdd5e0;
+  background-color: var(--Branco);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #222;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-grupo input[type="text"]:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--Principal);
+  box-shadow: 0 0 0 2px rgba(0, 32, 81, 0.1);
+}
+
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.area-btn-salvar {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--Bcaixa);
+  text-align: right;
+}
+
+.btn-salvar {
+  background: var(--Principal);
+  color: var(--Branco);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  font-size: 15px;
+  transition: opacity 0.2s;
+}
+.btn-salvar:hover {
+  opacity: 0.9;
+}
+
+
+
+/* === ESTILOS ADICIONAIS PARA ABA PROFISSIONAL === */
+
+
+
+.form-grupo select.input-form-estilo {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #cdd5e0;
+  background-color: var(--Branco);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%2398a0ab%22%3E%3Cpath%20d%3D%22M9.293%2012.95l-3.536-3.536%201.414-1.414L10%2010.12l2.828-2.828%201.414%201.414-3.536%203.536a1%201%200%200%201-1.414%200z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+}
+
+.form-grupo select.input-form-estilo:focus {
+  outline: none;
+  border-color: var(--Principal);
+  box-shadow: 0 0 0 2px rgba(0, 32, 81, 0.1);
+}
+
+
+/* Grid para os botões de especialidade */
+.grade-especialidades {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Estilo dos botões de especialidade */
+.btn-especialidade {
+  padding: 12px;
+  border: 1px solid #cdd5e0;
+  border-radius: 6px;
+  background: var(--Branco);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-especialidade:hover {
+  background: #f4fafe;
+  border-color: var(--Principal);
+  color: var(--Principal);
+}
+
+
+.btn-especialidade.active {
+  background: #e3f2fd; 
+  color: var(--Principal);
+  border-color: var(--Principal);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 32, 81, 0.05);
+}

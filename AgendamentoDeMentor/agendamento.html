@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Agendar Sessão — UpWise</title>
+  
+  <link rel="stylesheet" href="agendamento.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <aside class="barra-lateral">
+    <div>
+      <div class="marca">
+        <div class="texto-marca">
+           <img src="logomentorado.png" alt="logo">
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+            <li data-link="inicio"><i class="fas fa-home"></i> Início</li>
+            <li data-link="buscar-mentores"><i class="fas fa-search"></i> Buscar Mentores</li>
+            <li data-link="minhas-sessoes"><i class="fas fa-calendar-alt"></i> Minhas Sessões</li>
+            <li data-link="chat"><i class="fas fa-comments"></i> Chat</li>
+            <li data-link="favoritos"><i class="fas fa-star"></i> Favoritos</li>
+            <li data-link="perfil"><i class="fas fa-user-circle"></i> Perfil</li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="usuario">
+      <div class="info-usuario">
+        <div class="avatar"></div>
+        <div>
+          <div class="nome-usuario">[Nome]</div>
+          <div class="email-usuario">email@gmail.com</div>
+        </div>
+      </div>
+      <div class="sair">
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+      </div>
+    </div>
+  </aside>
+
+  <main class="principal">
+    
+    <button class="btn-voltar"><i class="fas fa-arrow-left"></i> Volta à Busca</button>
+
+    <header class="cabecalho">
+      <h1>Agendar Sessão</h1>
+      <p>Agendar sua sessão de mentoria com [Mentor]</p>
+    </header>
+
+    <div class="container-passos">
+      <div class="item-passo active" id="stepper-1">
+        <div class="numero-passo">
+          <i class="fas fa-check"></i>
+          <span>1</span>
+        </div>
+        <div class="linha-passo"></div>
+      </div>
+      <div class="item-passo" id="stepper-2">
+        <div class="numero-passo">
+          <i class="fas fa-check"></i>
+          <span>2</span>
+        </div>
+        <div class="linha-passo"></div>
+      </div>
+      <div class="item-passo" id="stepper-3">
+        <div class="numero-passo">
+          <i class="fas fa-check"></i>
+          <span>3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-agendamento-passos">
+
+      <div class="passo-agendamento active" id="step-content-1">
+        <div class="grade-agendamento">
+          
+          <aside class="cartao-mentor">
+            <div class="cabecalho-info-mentor">
+              <div class="avatar-mentor-grande"></div>
+              <h4>[Nome do mentor]</h4>
+              <div class="avaliacao-mentor">
+                <i class="fas fa-star"></i> (0 Sessões)
+              </div>
+            </div>
+            <div class="detalhes-info-mentor">
+              <p>[Valor]</p>
+              <p>[Tempo de duração]</p>
+              <p>Vídeo chamada incluída</p>
+            </div>
+          </aside>
+
+          <section class="caixa-passo">
+            <h3><i class="fas fa-calendar-alt"></i> Selecione Data e Horário</h3>
+            
+            <label class="rotulo-form">Escolha uma data</label>
+              <div class="calendario">
+                  <div class="calendario-cabecalho">
+                    <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                    <strong id="calendar-month-year"></strong> <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                  </div>
+                  <table class="calendario-tabela">
+                    <thead>
+                      <tr>
+                        <th>Do</th><th>Se</th><th>Te</th><th>Qu</th><th>Qu</th><th>Se</th><th>Sa</th>
+                      </tr>
+                    </thead>
+                    <tbody id="calendar-body"></tbody> 
+                  </table>
+                </div>
+
+            <label class="rotulo-form">Horários disponível</label>
+            <div class="grade-horarios">
+              <button class="horario-slot">08:00</button>
+              <button class="horario-slot">09:00</button>
+              <button class="horario-slot">10:00</button>
+              <button class="horario-slot">11:00</button>
+              <button class="horario-slot">12:00</button>
+              <button class="horario-slot">14:00</button>
+              <button class="horario-slot">15:00</button>
+              <button class="horario-slot">16:00</button>
+              <button class="horario-slot">17:00</button>
+              <button class="horario-slot">18:00</button>
+              <button class="horario-slot">19:00</button>
+              <button class="horario-slot">20:00</button>
+            </div>
+
+            <div class="navegacao-passo">
+              <button class="btn-primario">Próximo</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="passo-agendamento" id="step-content-2">
+        <div class="grade-agendamento">
+          
+          <aside class="cartao-mentor">
+            <div class="cabecalho-info-mentor">
+              <div class="avatar-mentor-grande"></div>
+              <h4>[Nome do mentor]</h4>
+              <div class="avaliacao-mentor">
+                <i class="fas fa-star"></i> (0 Sessões)
+              </div>
+            </div>
+            <div class="detalhes-info-mentor">
+              <p>[Valor]</p>
+              <p>[Tempo de duração]</p>
+              <p>Vídeo chamada incluída</p>
+            </div>
+            <div class="resumo-sessao">
+              <h4>Resumo da Sessão</h4>
+              <div class="linha-resumo">
+                <span>Data:</span>
+                <strong>[Data]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Hora:</span>
+                <strong>[Hora]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Duração:</span>
+                <strong>[Duração]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Tópicos:</span>
+                <strong>[Tópicos]</strong>
+              </div>
+              <hr>
+              <div class="linha-resumo total">
+                <span>Valor:</span>
+                <strong>[Valor]</strong>
+              </div>
+            </div>
+          </aside>
+
+          <section class="caixa-passo">
+            <h3><i class="fas fa-list-alt"></i> Detalhes da Sessão</h3>
+      
+            <div class="grupo-form">
+              <label for="duracao" class="rotulo-form">Duração</label>
+              <select id="duracao">
+                <option>30 minutos</option>
+                <option>1 hora</option>
+                <option>1h 30 minutos</option>
+                <option>2 horas</option>
+              </select>
+            </div>
+            
+            <div class="grupo-form">
+              <label for="topicos" class="rotulo-form">Tópicos da Mentoria</label>
+              <input type="text" id="topicos" placeholder="Ex: Orientação de carreira, dúvida em tópico, Revisão de portfólio...">
+            </div>
+
+            <div class="grupo-form">
+              <label for="observacao" class="rotulo-form">Observação (opcional)</label>
+              <textarea id="observacao" rows="6" placeholder="Adicione qualquer informação relevante para o mentor..."></textarea>
+            </div>
+
+            <div class="navegacao-passo space-between">
+              <button class="btn-secundario">Voltar</button>
+              <button class="btn-primario" style="background-color: var(--green);">Confirmar Agendamento</button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="passo-agendamento" id="step-content-3">
+        <div class="grade-agendamento">
+          
+          <aside class="cartao-mentor">
+            <div class="cabecalho-info-mentor">
+              <div class="avatar-mentor-grande"></div>
+              <h4>[Nome do mentor]</h4>
+              <div class="avaliacao-mentor">
+                <i class="fas fa-star"></i> (0 Sessões)
+              </div>
+            </div>
+            <div class="detalhes-info-mentor">
+              <p>[Valor]</p>
+              <p>[Tempo de duração]</p>
+              <p>Vídeo chamada incluída</p>
+            </div>
+            <div class="resumo-sessao">
+              <h4>Resumo da Sessão</h4>
+              <div class="linha-resumo">
+                <span>Data:</span>
+                <strong>[Data]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Hora:</span>
+                <strong>[Hora]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Duração:</span>
+                <strong>[Duração]</strong>
+              </div>
+              <div class="linha-resumo">
+                <span>Tópicos:</span>
+                <strong>[Tópicos]</strong>
+              </div>
+              <hr>
+              <div class="linha-resumo total">
+                <span>Valor:</span>
+                <strong>[Valor]</strong>
+              </div>
+            </div>
+          </aside>
+
+          <section class="caixa-passo">
+            <div class="container-sucesso">
+              <div class="icone-sucesso">
+                <i class="fas fa-check"></i>
+              </div>
+              <h4>Sessão Agendada com Sucesso!</h4>
+              <p>Sua sessão foi confirmada para [data] às [hora de início]</p>
+              <p class="aviso-email">Você receberá um email com mais detalhes da sessão</p>
+              
+              <div class="acoes-sucesso">
+                <button class="btn-secundario">Enviar Mensagem</button>
+                <button class="btn-primario">Ver Minhas Sessões</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <script src="agendamento.js"></script> 
+</body>
+</html>

@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Inter:wght@300;400;500;600&display=swap');
+
+:root{
+  --Fundo: #eef6fb;
+  --Branco: #ffffff;
+  --Principal: #002051;
+  --Texto: #98a0ab; 
+  --Scaixa: 0 6px 14px rgba(19, 24, 32, 0.06);
+  --Bcaixa: rgba(15,23,42,0.04);
+  --green: #4CAF50;
+  --purple: #BA68C8;
+  --yellow: #FFD54F;
+  --pink: #e75480;
+  --lacuna-painel: 24px; 
+  --Sidebarw: 220px;
+}
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--Fundo);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  display:flex;
+  min-height:100vh;
+}
+
+/* BARRA LATERAL */
+.barra-lateral{
+  width:var(--Sidebarw);
+  background:#FAFAFA;
+  height:100vh;
+  position:fixed;
+  left:0;
+  top:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  border-right:1px solid var(--Bcaixa);
+  padding:18px 16px;
+  z-index:20;
+}
+.barra-lateral .marca{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.barra-lateral .marca img{
+  width:200px;
+}
+.texto-marca .title{
+  font-family:"Days One", sans-serif;
+  color:var(--Principal);
+  font-size:18px;
+}
+.texto-marca .sub{
+  font-size:12px;
+  color:var(--Texto);
+  margin-top:4px;
+}
+
+/* nav */
+.barra-lateral nav{margin-top:18px}
+.barra-lateral nav ul{list-style:none;padding:0;margin:0}
+.barra-lateral nav li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 8px;
+  border-radius:8px;
+  color:#222;
+  font-size:15px;
+  cursor:pointer;
+}
+.barra-lateral nav li:hover{
+  background:#f5fbff;
+  color:var(--Principal);
+}
+
+/* info usuario */
+.usuario{
+  border-top:1px solid var(--Bcaixa);
+  padding-top:12px;
+  font-size:13px;
+  color:var(--Texto);
+}
+.info-usuario{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.avatar{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#e6e9ee;
+}
+.nome-usuario{
+  font-weight:600;
+  color: #0f172a; 
+}
+.email-usuario{
+  font-size:12px;
+  color:var(--Texto);
+}
+.sair{
+  margin-top:12px;
+}
+.sair a{
+  color:var(--Principal);
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* AREA PRINCIPAL */
+.principal{
+  margin-left:var(--Sidebarw);
+  padding:28px 36px;
+  flex:1;
+  min-height:100vh;
+}
+.cabecalho h1{
+  margin:0;
+  font-family:"Days One", sans-serif;
+  font-size:28px;
+  color:#0b1220;
+}
+.cabecalho p{
+  margin:6px 0 20px;
+  color:var(--Texto);
+  font-size:14px;
+}
+
+/* METRICAS (Estilos de outras páginas - mantidos para consistência) */
+.metricas{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-bottom:20px;
+}
+.metrica{
+  background:var(--Branco);
+  border-radius:10px;
+  padding:16px;
+  box-shadow:var(--Scaixa);
+  border:1px solid var(--Bcaixa);
+  position:relative;
+}
+.metrica .rotulo{
+  font-size:13px;
+  color:var(--Texto);
+  margin-bottom:6px;
+}
+.metrica .valor{
+  font-size:22px;
+  font-weight:600;
+  margin-bottom:8px;
+}
+.metrica .emblema{
+  position:absolute;
+  right:12px;
+  top:12px;
+  font-size:12px;
+  padding:6px 8px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.emblema-roxo{
+  background:#f7f0ff;
+  color:var(--purple);
+}
+.emblema-verde{
+  background:#e6f7ee;
+  color:var(--green);
+}
+.emblema-amarelo{
+  background:#fff8e6;
+  color:#f0a500;
+}
+.emblema-rosa{
+  background:#fff5f9;
+  color:var(--pink);
+}
+
+/* GRADE PRINCIPAL (Estilos de outras páginas) */
+.grade-principal{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-bottom:22px;
+}
+.caixa{
+  background:var(--Branco);
+  border-radius:10px;
+  padding:20px;
+  min-height:250px;
+  box-shadow:var(--Scaixa);
+  border:1px solid var(--Bcaixa);
+}
+.caixa h3{
+  margin:0 0 12px;
+  font-size:16px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:var(--Principal);
+}
+.caixa i{
+  color:var(--Principal);
+}
+.caixa .vazio{
+  color:#9aa3ad;
+  font-size:14px;
+  margin-top:12px;
+}
+.caixa-larga{
+  grid-column:1 / -1;
+}
+.area-btn{
+  margin-top:12px;
+}
+.area-btn.direita{
+  text-align:right;
+}
+
+/* BOTOES (Estilos de outras páginas) */
+.linha-acoes{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+.btn-acao{
+  flex:1;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #ddd;
+  background:var(--Branco);
+  font-weight:500;
+  cursor:pointer;
+  transition:background 0.2s, transform 0.1s;
+}
+.btn-acao:hover{
+  background:#f0f4ff;
+  transform:translateY(-1px);
+}
+
+/* Botão de Voltar (Estilos de outras páginas) */
+.btn-voltar {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s;
+}
+.btn-voltar:hover {
+  background: #e2e8f0;
+}
+
+/* (Outros estilos de agendamento, etc... Omitidos da sua versão original, mas mantidos aqui caso existam) */
+/* ... */
+
+
+/* --- ESTILOS DA PÁGINA "MINHAS SESSÕES" --- */
+
+/* Cabeçalho: Remove o espaçamento inferior extra */
+.cabecalho p {
+  margin-bottom: 24px;
+}
+
+/* Métricas (Cards de Stats) */
+.sessoes-metricas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.metrica-card {
+  background: var(--Branco);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: var(--Scaixa);
+  border: 1px solid var(--Bcaixa);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.icone-metrica {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.metrica-valor {
+  font-size: 28px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.metrica-rotulo {
+  font-size: 14px;
+  color: var(--Texto);
+  font-weight: 500;
+}
+
+/* Cores dos ícones das métricas */
+.icone-azul { color: #3b82f6; }
+.icone-verde { color: #10b981; }
+.icone-roxo { color: #8b5cf6; }
+.icone-amarelo { color: #f59e0b; }
+
+
+/* Sistema de Abas */
+.sessoes-abas {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0; /* Borda da base das abas */
+  margin-bottom: -1px; /* Puxa o conteúdo para cima */
+  position: relative;
+  z-index: 10;
+}
+.aba-item {
+  background: none;
+  border: none;
+  padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--Texto);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px; /* Alinha com a borda principal */
+  transition: color 0.2s, border-color 0.2s;
+}
+.aba-item:hover {
+  color: #333;
+}
+.aba-item.ativo {
+  color: var(--Principal);
+  border-bottom-color: var(--Principal);
+}
+
+/* Conteúdo das Abas */
+.sessoes-conteudo {
+  /* A classe .caixa já dá o fundo branco */
+  border-top-left-radius: 0; /* Para encaixar nas abas */
+  min-height: 400px; 
+  padding-top: 40px; 
+  padding-bottom: 40px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+.aba-painel {
+  width: 100%;
+}
+
+/* Estado de vazio para sessões (AJUSTADO) */
+.sessoes-vazio {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--Texto);
+  padding: 20px;
+}
+.sessoes-vazio .icone-sessoes {
+  font-size: 44px;
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+/* Novo estilo para o título principal do vazio (maior e mais escuro) */
+.sessoes-vazio .sessoes-vazio-titulo-grande {
+  font-size: 20px; /* Um pouco maior que o título padrão */
+  font-weight: 600;
+  color: #0f172a; /* Mais escuro */
+  margin-bottom: 8px;
+}
+
+/* Estilo para o subtítulo "Que tal agendar..." */
+.sessoes-vazio .sessoes-vazio-subtitulo {
+  font-size: 14px; /* Mais fino */
+  color: var(--Texto); /* Cor padrão do texto de auxílio */
+  margin-top: 0;
+}
+
+/* O estilo para .sessoes-vazio-titulo ainda serve para as outras abas */
+.sessoes-vazio .sessoes-vazio-titulo {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+
+/* --- ESTILOS DO PAINEL "PRÓXIMAS" VAZIO (Conforme Imagem) --- */
+
+.sessoes-vazio-proximas {
+  width: 100%;
+  min-height: 350px; /* Garante altura mínima para o layout */
+  position: relative; /* Contexto de posicionamento para os filhos */
+  padding: 20px; /* Mantém o espaçamento interno da caixa branca */
+  
+  /* Removemos o display: flex para não forçar lado a lado */
+}
+
+.vazio-proximas-texto {
+  /* Posicionamos o bloco de texto de forma absoluta */
+  position: absolute;
+  left: 20px;   /* Alinha com o padding do pai */
+  bottom: 20px; /* Alinha com o padding do pai */
+  text-align: left;
+  
+  /* Removemos flex-basis/grow para não interferir */
+}
+
+.vazio-proximas-acao {
+  /* Este bloco vai preencher o espaço e centralizar o ícone */
+  width: 100%;
+  height: 100%;
+  min-height: 350px; /* Garante que o ícone se centralize na altura mínima */
+  
+  /* Usamos flex para centralizar o *conteúdo* deste bloco (o ícone) */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+
+  /* Removemos flex-basis/grow */
+}
+
+/* Estilo para o título (apenas para garantir) */
+.vazio-proximas-texto .sessoes-vazio-titulo-grande {
+  font-size: 20px; 
+  font-weight: 600;
+  color: #0f172a; 
+  margin: 0; 
+}
+
+/* Estilo para o subtítulo (ESCONDE, como na imagem) */
+.vazio-proximas-acao .sessoes-vazio-subtitulo {
+  display: none; 
+}
+
+/* Estilo para o ícone (apenas para garantir) */
+.vazio-proximas-acao .icone-sessoes {
+  font-size: 44px;
+  color: #cbd5e1;
+  margin-bottom: 0; /* Remove margem, já que o subtítulo sumiu */
+}
+
+/* --- FIM DOS ESTILOS "PRÓXIMAS" VAZIO --- */

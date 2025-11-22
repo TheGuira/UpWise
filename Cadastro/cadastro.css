@@ -1,0 +1,223 @@
+:root {
+  --Fundo: #F4FAFE;
+  --TextoP: #002051;
+  --TextoS: #475569;
+  --Borda: #cbd5e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f3f8fe;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #1a73e8;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.logo img {
+  width: 250px;
+}
+
+.logo h1 {
+  color: #0f172a;
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+.logo p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.form-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.progress {
+  width: 100%;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+  height: 5px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 5px;
+  width: 33.3%;
+  background-color: #2563eb;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+h2 {
+  font-size: 16px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+p {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+form label {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+  color: var(--TextoP);
+  }
+
+/* ATUALIZADO: Adicionado 'select' e novas propriedades de consistência */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 10px;
+  background-color: #fff; /* Garante fundo branco */
+  font-family: inherit; /* Garante a mesma fonte */
+  font-size: 14px; /* Garante o mesmo tamanho de fonte */
+  color: var(--TextoP); /* Garante a mesma cor de texto */
+}
+
+/* NOVO: Adicionado para estilizar a opção de placeholder do select */
+select:invalid {
+  color: #64748b;
+}
+
+textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+.account-type {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.account-type button {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.account-type button span {
+  display: block;
+  font-weight: 400;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.account-type button.selected {
+  border: 2px solid #2563eb;
+  background-color: #eff6ff;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.interest-grid button {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.interest-grid button.selected {
+  border: 2px solid #2563eb;
+  background-color: #eff6ff;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-footer.right {
+  justify-content: flex-end;
+}
+
+.back-btn {
+  background-color: #e2e8f0;
+  color: #0f172a;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.next-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
