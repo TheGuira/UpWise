@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("link-voltar").addEventListener("click", function(event) {
       event.preventDefault();
       // Sai da pasta 'login' (../) e entra na 'homepage' (homepage/)
-      window.location.href = "../homepage/homepage.html";
+      window.location.href = "../index.html";
     });
 
     // 2. Link "Cadastrar-se"
@@ -63,4 +63,5 @@ document.addEventListener("DOMContentLoaded", function() {
     // FIM DO CÓDIGO DE LOGIN ATUALIZADO
     // ===================================================
     
+
 });
